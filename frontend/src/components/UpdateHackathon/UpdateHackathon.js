@@ -16,7 +16,7 @@ class UpdateHackathon extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get("http://localhost:8082/api/hackathons/" + this.props.match.params.id)
+      .get("http://rate-my-hackathon.herokuapp.com/api/hackathons/" + this.props.match.params.id)
       .then((res) => {
         // this.setState({...this.state, hackathon: res.data})
         this.setState({
@@ -45,7 +45,7 @@ class UpdateHackathon extends Component {
 
     axios
       .put(
-        "http://localhost:8082/api/hackathons/" + this.props.match.params.id,
+        "http://rate-my-hackathon.herokuapp.com/api/hackathons/" + this.props.match.params.id,
         data
       )
       .then((res) => {

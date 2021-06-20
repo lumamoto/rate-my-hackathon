@@ -25,7 +25,7 @@ class ViewHackathon extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     axios
-      .get("http://localhost:8082/api/hackathons/" + this.props.match.params.id)
+      .get("http://rate-my-hackathon.herokuapp.com/api/hackathons/" + this.props.match.params.id)
       .then((res) => {
         // console.log("Print-ViewHackathon-API-response: " + res.data);
         this.setState({
@@ -41,7 +41,7 @@ class ViewHackathon extends Component {
   // onClick={this.onDeleteClick.bind(this, hackathon._id)}
   onDeleteClick(id) {
     axios
-      .delete("http://localhost:8082/api/hackathons/" + id)
+      .delete("http://rate-my-hackathon.herokuapp.com/api/hackathons/" + id)
       .then((res) => {
         this.props.history.push("/");
       })

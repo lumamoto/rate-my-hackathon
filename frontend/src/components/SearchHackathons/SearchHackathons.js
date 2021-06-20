@@ -17,7 +17,7 @@ class SearchHackathons extends Component {
   // Show all hackathons when first visiting the page
   componentDidMount() {
     axios
-      .get("http://localhost:8082/api/hackathons")
+      .get("http://rate-my-hackathon.herokuapp.com/api/hackathons")
       .then((res) => {
         this.setState({
           hackathons: res.data,
@@ -30,7 +30,7 @@ class SearchHackathons extends Component {
 
   search = async (val) => {
     const res = await axios(
-      `http://localhost:8082/api/hackathons/search?q=${val}`
+      `http://rate-my-hackathon.herokuapp.com/api/hackathons/search?q=${val}`
     );
     const hackathons = await res.data;
     this.setState({ hackathons });

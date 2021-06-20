@@ -10,7 +10,7 @@
   <p align="center">
     A simple web app that allows hackers to rate hackathons they've participated in.
     <br />
-    <a href="https://ratemyhackathon.online"><strong>View application »</strong></a>
+    <a href="https://rate-my-hackathon.herokuapp.com/"><strong>View application »</strong></a>
     <br />
     <br />
     <a href="https://github.com/lumamoto/rate-my-hackathon/issues">Report Bug</a>
@@ -74,6 +74,8 @@ To get a local copy up and running follow these simple steps.
 2. Install NPM packages
    ```sh
    npm install
+   cd frontend && npm install
+   cd ../backend && npm install
    ```
 
 

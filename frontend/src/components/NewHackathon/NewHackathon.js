@@ -36,8 +36,9 @@ class NewHackathon extends Component {
       reviews: [],
     };
 
+    // http://localhost:8082/api/hackathons
     axios
-      .post("http://localhost:8082/api/hackathons", data)
+      .post("http://rate-my-hackathon.herokuapp.com/api/hackathons", data)
       .then((res) => {
         this.setState({
           name: "",
