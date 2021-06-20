@@ -21,10 +21,10 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "NODE_ENV=dev webpack-dev-server",
+    "build": "NODE_ENV=prod webpack",
+    "stage": "NODE_ENV=staging webpack",
+    "test": "NODE_ENV=test jest --watchAll --coverage"
   },
   "eslintConfig": {
     "extends": [

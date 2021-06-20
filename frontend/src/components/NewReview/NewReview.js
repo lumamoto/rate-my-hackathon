@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import axios from "axios";
 import "../../App.css";
 import {
   Header,
@@ -9,6 +8,7 @@ import {
   Divider,
   Message,
 } from "semantic-ui-react";
+import { app } from '../utils/axiosConfig.js';
 
 class NewReview extends Component {
   constructor(props) {
@@ -25,8 +25,8 @@ class NewReview extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get("http://rate-my-hackathon.herokuapp.com/api/hackathons/" + this.props.match.params.id)
+    app
+      .get("hackathons/" + this.props.match.params.id)
       .then((res) => {
         this.setState({
           id: res.data.id,
@@ -71,9 +71,9 @@ class NewReview extends Component {
 
     console.log(data);
 
-    axios
+    app
       .put(
-        "http://rate-my-hackathon.herokuapp.com/api/hackathons/" + this.props.match.params.id,
+        "hackathons/" + this.props.match.params.id,
         data
       )
       .then((res) => {

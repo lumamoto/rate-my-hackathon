@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../../App.css";
-import axios from "axios";
 import { Header, Container, Form, Button, Divider } from "semantic-ui-react";
+import { app } from '../utils/axiosConfig.js';
 
 class NewHackathon extends Component {
   constructor() {
@@ -36,9 +36,8 @@ class NewHackathon extends Component {
       reviews: [],
     };
 
-    // http://localhost:8082/api/hackathons
-    axios
-      .post("http://rate-my-hackathon.herokuapp.com/api/hackathons", data)
+    app
+      .post("hackathons", data)
       .then((res) => {
         this.setState({
           name: "",

@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
 import "../App.css";
+import { app } from '../utils/axiosConfig.js';
+
 
 class UpdateHackathon extends Component {
   constructor(props) {
@@ -15,8 +16,8 @@ class UpdateHackathon extends Component {
 
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
-    axios
-      .get("http://rate-my-hackathon.herokuapp.com/api/hackathons/" + this.props.match.params.id)
+    app
+      .get("hackathons/" + this.props.match.params.id)
       .then((res) => {
         // this.setState({...this.state, hackathon: res.data})
         this.setState({
@@ -43,9 +44,9 @@ class UpdateHackathon extends Component {
       reviews: this.state.reviews,
     };
 
-    axios
+    app
       .put(
-        "http://rate-my-hackathon.herokuapp.com/api/hackathons/" + this.props.match.params.id,
+        "hackathons/" + this.props.match.params.id,
         data
       )
       .then((res) => {
