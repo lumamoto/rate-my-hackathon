@@ -37,6 +37,7 @@
       <a href="#getting-started">Getting Started</a>
       <ul>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#how-to-run">How to Run</a></li>
       </ul>
     </li>
     <li><a href="#roadmap">Roadmap</a></li>
@@ -77,6 +78,13 @@ To get a local copy up and running follow these simple steps.
    npm install
    ```
 
+
+### How to Run
+
+To run the app locally, starting up both the frontend and backend concurrently:
+```sh
+npm run dev
+```
 
 
 <!-- ROADMAP -->
