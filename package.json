@@ -17,8 +17,8 @@
     "url": "https://github.com/lumamoto/rate-my-hackathon/issues"
   },
   "homepage": "https://github.com/lumamoto/rate-my-hackathon#readme",
-  "dependencies": {},
-  "devDependencies": {
+  "dependencies": {
     "concurrently": "^6.2.0"
-  }
+  },
+  "devDependencies": {}
 }
