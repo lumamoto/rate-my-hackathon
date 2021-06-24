@@ -152,9 +152,17 @@ class NewReview extends Component {
               onChange={this.handleChange}
               min={1}
               max={5}
-              step={1}
+              step={0.5}
               type="range"
             />
+
+            {/* <Button.Group>
+              <Button>1</Button>
+              <Button>2</Button>
+              <Button>3</Button>
+              <Button>4</Button>
+              <Button>5</Button>
+            </Button.Group> */}
 
             <Form.TextArea
               fluid
@@ -181,9 +189,9 @@ class NewReview extends Component {
 
             <Divider hidden />
             <Message>
-              <Message.Header>
+              <h2>
                 Before adding your review, please remember:
-              </Message.Header>
+              </h2>
               <p>
                 Be honest. This review should be based on <u>your</u> own
                 experience.

@@ -46,7 +46,7 @@ class NewHackathon extends Component {
           themes: [],
           reviews: [],
         });
-        this.props.history.push("/");
+        this.props.history.push("/search");
       })
       .catch((err) => {
         console.log("Error in NewHackathon!");
