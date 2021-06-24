@@ -48,8 +48,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Rate my Hackathon is a website that allows hackers to discern more accurately which hackathon they want to participate in. Hackers can leave a review of hackathons they have finished as well as see other reviews left by hackers.
-
+Rate my Hackathon is a web application that allows hackers to discern more accurately which hackathon they want to participate in. Hackers can leave a review of hackathons they have finished as well as see other reviews left by hackers.
 
 ### Built With
 
