@@ -3,6 +3,8 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const db = process.env.ATLAS_URI;
 
+let connectDB = null;
+
 module.exports = async () => {
   try {
     await mongoose.connect(
@@ -24,6 +26,7 @@ module.exports = async () => {
     })
 
     connectDB = connection;
+    console.log('connectDB: ' + connectDB);
 
   } catch (err) {
     console.error(err.message);
