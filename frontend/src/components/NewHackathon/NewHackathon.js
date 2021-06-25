@@ -37,7 +37,7 @@ class NewHackathon extends Component {
     };
 
     app
-      .post("hackathons", data)
+      .post("/", data)
       .then((res) => {
         this.setState({
           name: "",

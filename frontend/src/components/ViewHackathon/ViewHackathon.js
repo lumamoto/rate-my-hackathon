@@ -25,7 +25,7 @@ class ViewHackathon extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     app
-      .get("hackathons/" + this.props.match.params.id)
+      .get("/" + this.props.match.params.id)
       .then((res) => {
         // console.log("Print-ViewHackathon-API-response: " + res.data);
         this.setState({
@@ -41,7 +41,7 @@ class ViewHackathon extends Component {
   // onClick={this.onDeleteClick.bind(this, hackathon._id)}
   onDeleteClick(id) {
     app
-      .delete("hackathons/" + id)
+      .delete("/" + id)
       .then((res) => {
         this.props.history.push("/");
       })

@@ -17,7 +17,7 @@ class UpdateHackathon extends Component {
   componentDidMount() {
     // console.log("Print id: " + this.props.match.params.id);
     app
-      .get("hackathons/" + this.props.match.params.id)
+      .get("/" + this.props.match.params.id)
       .then((res) => {
         // this.setState({...this.state, hackathon: res.data})
         this.setState({
@@ -46,7 +46,7 @@ class UpdateHackathon extends Component {
 
     app
       .put(
-        "hackathons/" + this.props.match.params.id,
+        "/" + this.props.match.params.id,
         data
       )
       .then((res) => {

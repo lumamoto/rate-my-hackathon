@@ -26,7 +26,7 @@ class NewReview extends Component {
 
   componentDidMount() {
     app
-      .get("hackathons/" + this.props.match.params.id)
+      .get("/" + this.props.match.params.id)
       .then((res) => {
         this.setState({
           id: res.data.id,
@@ -73,7 +73,7 @@ class NewReview extends Component {
 
     app
       .put(
-        "hackathons/" + this.props.match.params.id,
+        "/" + this.props.match.params.id,
         data
       )
       .then((res) => {

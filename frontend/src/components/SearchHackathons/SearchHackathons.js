@@ -17,7 +17,7 @@ class SearchHackathons extends Component {
   // Show all hackathons when first visiting the page
   componentDidMount() {
     app
-      .get("hackathons")
+      .get("/")
       .then((res) => {
         this.setState({
           hackathons: res.data,
@@ -30,7 +30,7 @@ class SearchHackathons extends Component {
 
   search = async (val) => {
     const res = await app(
-      `hackathons/search?q=${val}`
+      `/search?q=${val}`
     );
     const hackathons = await res.data;
     this.setState({ hackathons });

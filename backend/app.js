@@ -1,37 +1,32 @@
 const express = require('express');
-const connectDB = require('./config/db');
-var cors = require('cors');
-
-// routes
-const hackathons = require('./routes/api/hackathons');
-
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const path = require('path')
 const app = express();
+const connectDB = require('./config/db');
 
 // Connect Database
 connectDB();
 
 // cors
 app.use(cors({ origin: true, credentials: true }));
-
 // Init Middleware
 app.use(express.json({ extended: false }));
 
-const path = require('path')
-
-// Serve static files from the React frontend app
-app.use(express.static(path.join(__dirname, '../frontend/build')))
+// API
+// Routes
+const hackathons = require('./routes/api/hackathons');
+// Use Routes
+app.use('/api/hackathons', hackathons);
 
 app.get('/', (req, res) => res.send('Hello world!'));
 
-// use Routes
-app.use('/api/hackathons', hackathons);
-
-// AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
+app.use(express.static(path.join(__dirname, '../frontend/build')))
 app.get('*', (req, res) => {
-    console.log('using index.html')
-    res.sendFile(path.join(__dirname + '/../frontend/build/index.html'))
+    res.sendFile(path.join(__dirname, '../fronted/build'))
 })
 
 const port = process.env.PORT || 8082;
-
-app.listen(port, () => console.log(`Server running on port ${port}`));
+app.listen(port, () => {
+    console.log(`Server running on port ${port}`)
+});

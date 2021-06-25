@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Input } from "semantic-ui-react";
 
 const SearchBar = (term) => (
-  <Form action="/hackathons/search" method="get">
+  <Form action="/search" method="get">
     <Input
       fluid
       icon="search"
