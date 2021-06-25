@@ -14,13 +14,13 @@ module.exports = async () => {
       }
     );
     const connection = mongoose.connection;
-    logger.info("Establishing connection to database...")
+    console.log("Establishing connection to database...")
 
     connection.on("error", (err) => {
-        logger.error("Encountered error while establishing connection to database");
+      console.error("Encountered error while establishing connection to database");
     })
     connection.once('open', () => {
-        logger.info("Database connection to " + database_name + " successfully established");
+      console.log("Database connection to " + database_name + " successfully established");
     })
 
     connectDB = connection;
