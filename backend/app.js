@@ -19,10 +19,11 @@ const hackathons = require('./routes/api/hackathons');
 // Use Routes
 app.use('/api/hackathons', hackathons);
 
-app.get('/', (req, res) => res.send('Hello world!'));
-
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, '../frontend/build')))
+
+app.get('/', (req, res) => res.send('Hello world!'));
+
 // AFTER defining routes: Anything that doesn't match what's above, send back index.html; (the beginning slash ('/') in the string is important!)
 app.get('*', (req, res) => {
     console.log('using index.html')
