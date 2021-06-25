@@ -23,7 +23,7 @@ app.get('/', (req, res) => res.send('Hello world!'));
 
 app.use(express.static(path.join(__dirname, '../frontend/build')))
 app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../fronted/build'))
+    res.sendFile(path.join(__dirname, '../frontend/build'))
 })
 
 const port = process.env.PORT || 8082;

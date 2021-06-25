@@ -3,22 +3,32 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const db = process.env.ATLAS_URI;
 
-const connectDB = async () => {
+module.exports = async () => {
   try {
     await mongoose.connect(
       db,
       {
         useNewUrlParser: true,
         useCreateIndex: true, 
-        useUnifiedTopology: true,
-        useFindAndModify: false
+        useUnifiedTopology: true
       }
     );
-    console.log('MongoDB is Connected...');
+    const connection = mongoose.connection;
+    logger.info("Establishing connection to database...")
+
+    connection.on("error", (err) => {
+        logger.error("Encountered error while establishing connection to database");
+    })
+    connection.once('open', () => {
+        logger.info("Database connection to " + database_name + " successfully established");
+    })
+
+    connectDB = connection;
+
   } catch (err) {
     console.error(err.message);
     process.exit(1);
   }
-};
 
-module.exports = connectDB;
+  return connectDB;
+};
