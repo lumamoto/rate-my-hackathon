@@ -1,9 +1,11 @@
 const express = require('express');
-const bodyParser = require('body-parser');
 const cors = require('cors');
 const path = require('path')
 const app = express();
 const connectDB = require('./config/db');
+
+const dotenv = require('dotenv');
+dotenv.config({path: '/.env'});
 
 // Connect Database
 connectDB();
