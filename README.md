@@ -105,7 +105,7 @@ npm run dev
   - [ ] Create individual profile pages
     - [ ] Edit/delete hackathons you've added
     - [ ] Edit/delete reviews you've written
-- [ ] Deploy to Heroku
+- [x] Deploy to Heroku
 
 
 
