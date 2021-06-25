@@ -3,9 +3,7 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const db = process.env.ATLAS_URI;
 
-let connectDB = null;
-
-module.exports = async () => {
+const connectDB = async () => {
   try {
     await mongoose.connect(
       db,
@@ -15,23 +13,12 @@ module.exports = async () => {
         useUnifiedTopology: true
       }
     );
-    const connection = mongoose.connection;
-    console.log("Establishing connection to database...")
 
-    connection.on("error", (err) => {
-      console.error("Encountered error while establishing connection to database");
-    })
-    connection.once('open', () => {
-      console.log("Database connection to " + database_name + " successfully established");
-    })
-
-    connectDB = connection;
-    console.log('connectDB: ' + connectDB);
-
+    console.log('MongoDB is Connected...');
   } catch (err) {
     console.error(err.message);
     process.exit(1);
   }
-
-  return connectDB;
 };
+
+module.exports = connectDB;
