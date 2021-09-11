@@ -6,7 +6,7 @@ import axios from 'axios';
 // const env = process.env.NODE_ENV; // current environment
 
 export const app = axios.create({
-  baseURL: 'https://rate-my-hackathon.herokuapp.com/api/hackathons'
+  baseURL: 'https://ratemyhackathon.herokuapp.com/api/hackathons'
     // env === 'prod'
     //   ? atlas_uri + '/api/hackathons' // production
     //   : 'http://localhost:8082/api/hackathons', // development
