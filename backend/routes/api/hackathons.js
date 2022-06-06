@@ -5,7 +5,7 @@ const router = express.Router();
 const Hackathon = require("../../models/Hackathon");
 
 // @route GET api/hackathons/search
-// @description Returns hackathons whose names contain some term
+// @description Returns hackathons whose names contain a given term
 // @access Public
 router.get("/search", (req, res) => {
   let q = req.query.q
